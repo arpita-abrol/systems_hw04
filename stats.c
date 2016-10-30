@@ -32,4 +32,5 @@ void printStats(char * file){
 int main(){
   printStats("test.txt");
 
+  return 0;
 }
