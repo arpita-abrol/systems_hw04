@@ -18,10 +18,10 @@ void printStats(char * file){
   }
 
   if(stat(file, filestruct) == 0){
-    printf("=====Stats of %s=====\n", file);
+    printf("\n=====Stats of %s=====\n", file);
     printf("size: %lld\n", filestruct->st_size);
     printf("mode: %o\n", filestruct->st_mode);
-    //printf("last access: %s\n", ctime(&(filestruct->st_atim)));
+    printf("last access: %s\n", ctime(&(filestruct->st_atime)));
   }
   else
     printf("error %d: %s\n", errno, strerror(errno));
