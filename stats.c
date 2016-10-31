@@ -8,6 +8,12 @@
 #include <string.h> 
 #include <sys/types.h>
 
+int toBinary(int n){
+  if (n == 0) return 0;
+  if (n == 1) return 1;
+  return (n % 2) + 10 * toBinary(n/2);
+}
+
 
 void printStats(char * file){
   struct stat *filestruct = (struct stat*)malloc(sizeof(struct stat));
@@ -31,6 +37,11 @@ void printStats(char * file){
 
 int main(){
   printStats("test.txt");
+  
+  int a = toBinary(6);
+  int b = toBinary(4);
+  printf("%d\n", a);
+  printf("%d\n", b);
 
   return 0;
 }
